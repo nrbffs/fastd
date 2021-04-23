@@ -188,6 +188,7 @@ static void free_peer_group(fastd_peer_group_t *group) {
 	fastd_shell_command_unset(&group->on_up);
 	fastd_shell_command_unset(&group->on_down);
 	fastd_shell_command_unset(&group->on_connect);
+	fastd_shell_command_unset(&group->on_handshake_respond);
 	fastd_shell_command_unset(&group->on_establish);
 	fastd_shell_command_unset(&group->on_disestablish);
 

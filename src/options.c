@@ -341,6 +341,11 @@ static void option_on_connect(const char *arg) {
 	fastd_shell_command_set(&conf.peer_group->on_connect, arg, false);
 }
 
+/** Handles the --on-handshake-respond option */
+static void option_on_handshake_respond(const char *arg) {
+	fastd_shell_command_set(&conf.peer_group->on_handshake_respond, arg, false);
+}
+
 /** Handles the --on-establish option */
 static void option_on_establish(const char *arg) {
 	fastd_shell_command_set(&conf.peer_group->on_establish, arg, false);

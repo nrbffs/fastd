@@ -58,6 +58,9 @@ OPTION_ARG(
 	option_on_connect, "--on-connect", "<command>",
 	"Sets a shell command to execute when a handshake is sent to establish a new connection");
 OPTION_ARG(
+	option_on_handshake_respond, "--on-handshake-respond", "<command>",
+	"Sets a shell command to execute when responding to a handshake to establish a new connection");
+OPTION_ARG(
 	option_on_establish, "--on-establish", "<command>",
 	"Sets a shell command to execute when a new connection is established");
 OPTION_ARG(

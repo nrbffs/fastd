@@ -285,6 +285,10 @@ static void respond_handshake(
 
 	const handshake_key_t *handshake_key = &ctx.protocol_state->handshake_key;
 
+	const fastd_shell_command_t *on_handshake_respond = fastd_peer_group_lookup_peer_shell_command(peer, on_handshake_respond);
+	fastd_peer_exec_shell_command(
+		on_handshake_respond, peer, local_addr, remote_addr, false);
+
 	if (!update_shared_handshake_key(peer, handshake_key, peer_handshake_key))
 		return;
 

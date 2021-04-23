@@ -68,6 +68,7 @@
 %token TOK_FORWARD
 %token TOK_FROM
 %token TOK_GROUP
+%token TOK_HANDSHAKE_RESPOND
 %token TOK_HANDSHAKES
 %token TOK_HIDE
 %token TOK_INCLUDE
@@ -199,6 +200,7 @@ peer_group_statement:
 	|	TOK_ON TOK_CONNECT on_connect ';'
 	|	TOK_ON TOK_ESTABLISH on_establish ';'
 	|	TOK_ON TOK_DISESTABLISH on_disestablish ';'
+	|	TOK_ON TOK_HANDSHAKE_RESPOND on_handshake_respond ';'
 	|	TOK_ON TOK_VERIFY on_verify ';'
 	|	TOK_INCLUDE include ';'
 	;
@@ -577,6 +579,11 @@ on_down:	sync TOK_STRING {
 
 on_connect:	sync TOK_STRING {
 			fastd_shell_command_set(&state->peer_group->on_connect, $2->str, $1);
+		}
+	;
+
+on_handshake_respond:	sync TOK_STRING {
+			fastd_shell_command_set(&state->peer_group->on_handshake_respond, $2->str, $1);
 		}
 	;
 

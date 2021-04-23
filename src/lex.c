@@ -66,6 +66,7 @@ static const keyword_t keywords[] = {
 	{ "forward", TOK_FORWARD },
 	{ "from", TOK_FROM },
 	{ "group", TOK_GROUP },
+	{ "handshake-respond", TOK_HANDSHAKE_RESPOND },
 	{ "handshakes", TOK_HANDSHAKES },
 	{ "hide", TOK_HIDE },
 	{ "include", TOK_INCLUDE },

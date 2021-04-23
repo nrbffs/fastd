@@ -36,6 +36,8 @@ struct fastd_peer_group {
 	fastd_shell_command_t on_down; /**< The command to execute before the destruction of the tunnel interface */
 	fastd_shell_command_t
 		on_connect; /**< The command to execute before a handshake is sent to establish a new connection */
+	fastd_shell_command_t 
+		on_handshake_respond; /**< The command to execute when responding to a handshake to establish a new connection */
 	fastd_shell_command_t on_establish;    /**< The command to execute when a new connection has been established */
 	fastd_shell_command_t on_disestablish; /**< The command to execute when a connection has been disestablished */
 };
